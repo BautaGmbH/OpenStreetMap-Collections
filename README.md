@@ -1,22 +1,20 @@
-# OpenStreetMap-Collections-Extracted-Elaborated
-In compliance to the ODbL License, we publish the collections we extracted and elaborated from the Open Street Map Database.
-We focussed our efforts on Germany.
+# Cleaned OpenStreetMap-Collections
 
-## Cleaned OSM Collections
-
-This repository contains datasets derived from [OpenStreetMap](https://www.openstreetmap.org/) data.  
-They are made available under the [Open Database License (ODbL)](https://opendatacommons.org/licenses/odbl/1-0/).
+This repository contains curated datasets derived from OpenStreetMap data, focusing on Germany.
+They are published in compliance with the Open Database License (ODbL).
 
 ## Source
 
-The data was originally extracted from the OpenStreetMap database.  
-OSM is available at: https://www.openstreetmap.org/
+Data was extracted via the Overpass API from OpenStreetMap.
 
 ## Modifications
 
-Each collection was generated using custom Overpass queries, extracted as Raw json and then cleaned manually.  
+Each dataset was:
+- Queried using custom Overpass Turbo requests
+- Exported as raw JSON
+  
 Cleaning involved:
-- Transforming the raw data object into an array, substituting the initial info, to a simple object of the overall array final structure e.g. below
+- Removed wrapper metadata, resulting in a flat array
   - Old Structure: {
   "version": 0.6,
   "generator": "Overpass API 0.7.62.7 375dc00a",
@@ -27,8 +25,9 @@ Cleaning involved:
   },
   "elements": [{}...{}]}
   - New Structure: [{"generator": "Overpass API 0.7.62.7 375dc00a", "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."}, {}...{}]
-- Removing all the "type": "node", key values from all the objects in the elements array
-- Transforming the tags object to simple key value pairs at the root of the parent objects in the elements array
+- Removed "type": "node" entries from each object
+- Promoted key-value pairs from tags object into the parent object
+- Standardized structure for easier processing
 
 No other data was added or combined.
 
@@ -206,10 +205,11 @@ No other data was added or combined.
 ## License
 
 These datasets are released under the [Open Database License (ODbL)](https://opendatacommons.org/licenses/odbl/1-0/).
+Data are derived from www.openstreetmap.org
 
 You are free to:
-- Copy and use the data for any purpose
+- Copy, modify and use the data for any purpose
 - Share adapted versions under the same license (ODbL)
-- Use the data in Produced Works (e.g., visualizations), provided you include attribution
+- Use the data in Produced Works (e.g., visualizations, reports) — just include attribution to OpenStreetMap
 
 See full license text: https://opendatacommons.org/licenses/odbl/1-0/
