@@ -137,15 +137,7 @@ No other data was added or combined.
   - https://overpass-api.de/api/interpreter?data=[out:json];area["ISO3166-1"="DE"][admin_level=2];node["shop"~"chemist|perfumery"](area);out body;
 
 - All Supermarkets in Germany:
-  - All ALDI
-  - All EDEKA
-  - All Kaufland
-  - All LIDL
-  - All NETTO
-  - All Penny
-  - All REWE
-  - All Tegut
-  - https://overpass-api.de/api/interpreter?data=[out:json];area["ISO3166-1"="DE"][admin_level=2];node["shop"="supermarket"]["brand"~"aldi|edeka|penny|lidl|netto|kaufland|real|rewe|tegut",i](area);out body; 
+  - https://overpass-api.de/api/interpreter?data=[out:json];area["ISO3166-1"="DE"][admin_level=2];node["shop"="supermarket"](area);out body; 
 
 - All Car Dealers in Germany:
   - https://overpass-api.de/api/interpreter?data=[out:json];area["ISO3166-1"="DE"][admin_level=2];node["shop"="car"](area);out body;
